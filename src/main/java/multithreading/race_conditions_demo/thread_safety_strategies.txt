@@ -1,0 +1,8 @@
+Thread safety strategies:
+1. Confinement: Each thread is given a specific task/resource to execute (no sharing of tasks): We then combine their results together
+2. Immutability: Each thread is allowed to work on immutable objects e.g Strings such that they can't modify it but only read from it
+3. Synchronization: Each thread is synchronized such that they access the resource/ execute a task sequentially(by putting a lock on the task)
+ but considered bad practise as it defies the purpose of concurrency. Could also cause deadlock (threads waiting for each other indefinitely) if not properly written
+4. Using Atomic Classes e.g AtomicInteger: If you increment an atomic integer the java compiler
+executes the increment as one single operation (does not break it down) yielding to consistent result in multithreaded application,
+5. Partitioning: This involves partitioning a resource or task into segments that would be accessed by threads one at a time

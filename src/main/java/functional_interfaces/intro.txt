@@ -1,0 +1,5 @@
+There are four types of functional interfaces in java:
+1. Consumer: This takes an object and returns void
+2. Supplier: This takes no input and returns a value
+3. Function: This maps a value to a different value
+4. Predicate: This takes an object and checks if it satisfies some criteria

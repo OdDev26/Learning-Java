@@ -1,0 +1,16 @@
+Multithreading allows you to utilize the full CPU of your machine. It allows you execute tasks in parallel
+An example of a multithreaded application: An application that exposes three threads that allows the client download seperate parts of
+an image concurrently.
+
+
+
+Benefits of multithreading
+1. It can make our application faster, meaning we can achieve more in less time e.g We can create separate threads
+to download 10 files instead of one to download all.
+
+Concurrency problems
+1. Race conditions: This occur when multiple threads are racing/competing to modify the same resource at the same time
+2. Visibility problem: When the state of the shared resource is seen differently by the different threads
+
+When building applications that use multiple threads, we must ensure they are thread safe meaning these problems must be addressed
+
