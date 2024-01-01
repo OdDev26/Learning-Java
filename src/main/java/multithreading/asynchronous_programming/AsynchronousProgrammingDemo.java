@@ -31,8 +31,8 @@ public class AsynchronousProgrammingDemo {
         // declarative way
 
 
-//        completableFuture.thenRun(()-> System.out.println("Done")); // With the thenRun() method from the CompletableStage interface
-        // we can run another code after the CompletableFuture is done
+//        completableFuture.thenRun(()-> System.out.println("Done")); // With the thenRun() method from the CompletableStage interface we can run
+//        another code after the CompletableFuture is done
         // But using the thenRun() method the task is handled on the main method
 
 //        completableFuture.thenRunAsync(()-> System.out.println("Done")); // With the thenRunAsync() method the task is handled on an underlying thread
@@ -46,14 +46,13 @@ public class AsynchronousProgrammingDemo {
         // Handling exceptions
 //        CompletableFuture<Integer> result = CompletableFuture.supplyAsync(()-> {
 //            System.out.println("Getting current weather");
-//            throw new IllegalArgumentException();
+//            throw new IllegalArgumentException();  // to simulate an exception, we don't see it in the main thread unless we call the get() method of result
 //        });
 
         // Note: The CompletableFuture provides a way of chaining multiple calls thereby creating an asynchronous flow
-
         // Exception is thrown when we call the get() method of result
 //        try {
-//            Integer output = result.exceptionally(throwable -> 1).get();// With this our application won't crash and we can return the last value retrieved
+//            Integer output = result.exceptionally(throwable -> 1).get();// With this our application won't crash and we can return a default value if an exception is thrown, in this case 1
         // from the call before exception is thrown
         // NB: The exceptionally() method creates a new CompletebaleFuture object
 //            System.out.println(output);
@@ -110,15 +109,15 @@ public class AsynchronousProgrammingDemo {
 
 
 //        // To call two remote services (that return same data) asynchronously and return the result of the first service that responds, we use the anyOf() method of the CompletableFuture
-//        CompletableFuture<Integer> callToRemoteService1 = CompletableFuture.supplyAsync(() ->{
-//            try {
-//                Thread.sleep(2000);
-//            } catch (InterruptedException e) {
-//                throw new RuntimeException(e);
-//            }
-//            return 20;
-//
-//        });
+        CompletableFuture<Integer> callToRemoteService1 = CompletableFuture.supplyAsync(() ->{
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            return 20;
+
+        });
 //        CompletableFuture<Integer> callToRemoteService2 = CompletableFuture.supplyAsync(() ->20);
 //        CompletableFuture.anyOf(callToRemoteService1,callToRemoteService2).thenAccept(output-> System.out.println(output));
 

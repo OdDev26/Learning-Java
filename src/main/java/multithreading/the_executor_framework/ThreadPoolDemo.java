@@ -44,7 +44,7 @@ public class ThreadPoolDemo {
         // The Callable interface: Used when we want to return a value when we submit a task to a thread
         // Useful if we want a thread to call an api to get some result
         ExecutorService threadPool = Executors.newFixedThreadPool(2);
-        Future<Integer> future = threadPool.submit((() -> {  // We're implementing the Callable call() method which returns immediately
+        Future<Integer> future = threadPool.submit((() -> {  // We're implementing the Callable call() method which returns a future object immediately
             return 1;
         }));
 

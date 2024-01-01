@@ -17,6 +17,8 @@ public class StreamExample {
                 .count();
 
 
+
+
         // Creating streams
         // 1. all collections have the stream() method
         // 2. We can also stream an array like this:
