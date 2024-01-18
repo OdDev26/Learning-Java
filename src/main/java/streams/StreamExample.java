@@ -48,7 +48,7 @@ public class StreamExample {
 //                .forEach(n-> System.out.println(n));
 
         // The flatMap is used to flatten a Stream<List<Object>> to a Stream<Object> e.g Stream<List<Integer>> to Stream<Integer>
-        // We could also flatten a Stream<Set<Object>>, Stream<Array<Object>>, etc.
+        // We could also flatten a Stream<Set<Object>>, a Stream<Array<Object>>, etc.
 //        Stream.of(List.of(1,2,3), List.of(5,6,7))
 //                .flatMap(list->list.stream()) // with this we flatten the list to just its objects with no list
 //                .forEach(n-> System.out.println(n));

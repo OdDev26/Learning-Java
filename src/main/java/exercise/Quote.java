@@ -1,5 +1,8 @@
 package exercise;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Quote {
     private String site;
     private double price;
@@ -26,5 +29,10 @@ public class Quote {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public static void main(String[] args) {
+        List<String> list= Arrays.asList("Bag","Keg","Can");
+        System.out.println(String.join("-",list));
     }
 }
