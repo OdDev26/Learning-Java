@@ -11,7 +11,7 @@ public class PredicateExample {
         // Chaining predicates
 //        boolean result =isLongerThan3.and(isLessThan9).test("abcd");
 //        boolean result =isLongerThan3.or(isLessThan9).test("abc");
-        boolean result =isLongerThan3.negate().test("abc");
+        boolean result =isLongerThan3.negate().test("abc"); // this inverts the output of the predicate
         System.out.println(result);
 
     }

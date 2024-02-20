@@ -72,10 +72,10 @@ public class StreamExample {
 
 
         // SORTING STREAMS
-//        movies.stream().sorted((a,b)->a.getTitle().compareTo(b.getTitle())) // We sort using the comparable interface which is a functional interface
-//                .forEach(movie -> System.out.println(movie.getTitle()));
+        // movies.stream().sorted((a,b)->a.getTitle().compareTo(b.getTitle())) // We sort using the comparable interface which is a functional interface
+         //      .forEach(movie -> System.out.println(movie.getTitle()));
 
-        // line 74 - 75 can be rewritten as
+        // line 75 - 76 can be rewritten as
 //        movies.stream().sorted(Comparator.comparing(movie -> movie.getTitle())).
 //                forEach(movie -> System.out.println(movie.getTitle()));
 

@@ -12,5 +12,6 @@ Concurrency problems
 1. Race conditions: This occur when multiple threads are racing/competing to modify the same resource at the same time
 2. Visibility problem: When the state of the shared resource is seen differently by the different threads
 
-When building applications that use multiple threads, we must ensure they are thread safe meaning these problems must be addressed
+When building applications that use multiple threads, we must ensure they are thread safe meaning these Concurrency
+problems must be addressed
 

@@ -8,26 +8,30 @@ import java.util.concurrent.locks.ReentrantLock;
 public class DownloadStatus {
     // Fixing visibility issue using the volatile keyword
 //    private volatile boolean isDone; // adding volatile  tells the java compiler to get the actual value of isDone
-                                    // from the main memory instead of thread cache (which isn't accurate), when the thread asks for this data
-    private  boolean isDone;
+    // from the main memory instead of thread cache (which isn't accurate), when the thread asks for this data
+    private boolean isDone;
+
     // Solving race condition using AtomicInteger. Should be used to fix race conditions while working with numbers
-//    private AtomicInteger totalBytes = new AtomicInteger();
+    private AtomicInteger totalBytes = new AtomicInteger();
+//    public int getTotalBytes() {
+//        return totalBytes.get();
+//  }
 
     // Solving race condition using LongAdder. Should be used to fix race conditions while working with numbers
-    private LongAdder totalBytes = new LongAdder();
+//    private LongAdder totalBytes = new LongAdder();
+    //    public int getTotalBytes() {
+//        return totalBytes.intValue();;
+//  }
 
     // Solving race condition using the synchronized keyword
-     private Object totalBytesLock = new Object();
+//     private Object totalBytesLock = new Object();
 
     // Solving race condition using Synchronization (Locks)
 //    private Lock lock = new ReentrantLock();
 
-    public int getTotalBytes() {
+//    public int getTotalBytes() {
 //        return totalBytes;
-//        return totalBytes.get();  // for AtomicInteger
-        return totalBytes.intValue(); // for LongAdder
-
-    }
+//    }
 
     public void incrementTotalBytes() {
         // Solving race condition using Locks
@@ -50,10 +54,11 @@ public class DownloadStatus {
                                         // unexpected bugs
 //        }
 
+        // Solving race conditions using atomic integers
+       totalBytes.incrementAndGet(); // This increments the totalBytes by 1 (for Atomic integers) => same as totalBytes++
 
-//        totalBytes.getAndIncrement(); // This increments the totalBytes by 1 (for Atomic integers)
-//        totalBytes++;
-        totalBytes.increment();  // This increments the totalBytes by 1 (for LongAdder)
+        // Solving race conditions using long adder
+//        totalBytes.increment();  // This increments the totalBytes by 1 (for LongAdder)
     }
 
     public boolean isDone() {
