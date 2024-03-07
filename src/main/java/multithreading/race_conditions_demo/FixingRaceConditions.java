@@ -129,7 +129,7 @@ public class FixingRaceConditions {
             }
         });
 
-        System.out.println(status.getTotalBytes());
+//        System.out.println(status.getTotalBytes());
 
 
 

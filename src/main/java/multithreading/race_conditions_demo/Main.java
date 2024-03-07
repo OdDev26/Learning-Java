@@ -25,7 +25,7 @@ public class Main {
             }
         });
 
-        System.out.println(status.getTotalBytes());
+//        System.out.println(status.getTotalBytes());
 
 
 

@@ -1,6 +1,6 @@
 package org.example.collections;
 
-public class Customer implements Comparable<Customer> // we to implement the Comparable interface so we can sort the Customer class
+public class Customer implements Comparable<Customer> // we implement the Comparable interface so we can sort the Customer class
          {
     private String name;
     private String email;
@@ -13,7 +13,7 @@ public class Customer implements Comparable<Customer> // we to implement the Com
     @Override
     public int compareTo(Customer o) {
         return name.compareTo(o.name);
-    }
+    } // sorts the customers in a list by name
 
     @Override
     public String toString() {

@@ -15,8 +15,8 @@ public class Main {
     customerList.add(new Customer("c", "e1"));
     customerList.add(new Customer("a", "e2"));
 
-//    Collections.sort(customerList);
-        Collections.sort(customerList,new EmailComparator()); // To sort by their email
+    Collections.sort(customerList);
+//        Collections.sort(customerList,new EmailComparator()); // To sort by their email
     System.out.println(customerList);
 
     }
