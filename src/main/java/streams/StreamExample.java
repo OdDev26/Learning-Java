@@ -158,6 +158,7 @@ public class StreamExample {
 //        System.out.println(result2);
         // We can also get the count of movies in each category by doing:
         Map<Genre, Long> result3 = movies.stream().collect(Collectors.groupingBy(Movie::getGenre, Collectors.counting()));
+//        System.out.println(result3);
         // We can also join the movie titles in each group by a delimiter
         Map<Genre, String> result4 = movies.stream().collect(Collectors.groupingBy(Movie::getGenre,
                 Collectors.mapping(Movie::getTitle, Collectors.joining(",")))); // This would join the movies in each group by , e.g {ACTION=a,c, COMEDY=b}
@@ -175,7 +176,6 @@ public class StreamExample {
 
 //        IntStream.range(0,5)  // This creates a stream of nos 0 to 4
 //                .forEach(System.out::println);
-
 
     }
 }
